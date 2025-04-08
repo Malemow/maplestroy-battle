@@ -1,0 +1,47 @@
+{
+  "name": "maplestory-battle-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn src/app.ts",
+    "build": "tsc",
+    "start": "pm2 start ecosystem.config.js --env production",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "@repo/constant": "workspace:*",
+    "@repo/lib": "workspace:*",
+    "@repo/types": "workspace:*",
+    "@types/cors": "^2.8.17",
+    "@types/socket.io": "^3.0.2",
+    "chalk": "^5.4.1",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.18.1",
+    "nanoid": "^5.1.5",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "socket.io": "^4.8.1",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.1",
+    "@types/express-session": "^1.18.1",
+    "@types/node": "^22.14.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.5.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "name": "@repo/types",
+    "dependencies": {
+        "@repo/lib": "workspace:*"
+    }
+}

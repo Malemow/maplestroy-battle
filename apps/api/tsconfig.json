@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "ES6",                          // 指定轉譯到 ES6，這樣可以使用 ES6 語法
+    "module": "CommonJS",                     // 使用 CommonJS 模組系統，適用於 Node.js
+    "moduleResolution": "node",               // 使 TypeScript 使用 Node.js 的模組解析方式
+    "lib": ["es6"],                           // 讓 TypeScript 引入 ES6 相關的庫
+    "strict": true,                            // 啟用所有嚴格型別檢查
+    "esModuleInterop": true,                  // 開啟 ES6 模組互操作
+    "skipLibCheck": true,                     // 跳過庫檔案的型別檢查，提升編譯速度
+    "forceConsistentCasingInFileNames": true, // 確保檔案名大小寫一致
+    "outDir": "./dist",                       // 輸出目錄
+    "rootDir": "./src",                       // 輸入根目錄
+    "resolveJsonModule": true,                // 允許從 JSON 檔案中導入
+    "allowSyntheticDefaultImports": true,      // 允許匯入預設導出的模組
+    "paths": {
+      "@/*": ["*"]
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+  },
+  "include": ["src/**/*.ts"],                   // 包含所有 TypeScript 檔案
+  "exclude": ["node_modules"]                   // 排除 node_modules 目錄
+}

@@ -1,0 +1,6 @@
+{
+    "name": "@repo/constant",
+    "dependencies": {
+        "@repo/types": "workspace:*"
+    }
+}

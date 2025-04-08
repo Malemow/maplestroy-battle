@@ -1,0 +1,6 @@
+{
+    "name": "@repo/lib",
+    "dependencies": {
+        "dayjs": "^1.11.13"
+    }
+}

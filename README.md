@@ -11,7 +11,6 @@
 - **Real-time Communication**: Socket.IO
 - **Game Logic**: TypeScript
 - **Build System**: TurboRepo (多包管理)
-- **Database**: Sqlite
 
 ## 遊戲介紹
 
@@ -35,10 +34,6 @@
 ### 後端
 
 後端使用 Node.js 和 Express 建立，提供遊戲的 API 和用戶認證系統。遊戲邏輯和即時對戰則是通過 Socket.IO 完成的，即時同步玩家的動作。
-
-## 資料庫
-
-使用 Sqlite 輕量化方案
 
 ### TurboRepo
 

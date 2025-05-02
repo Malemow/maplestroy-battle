@@ -49,8 +49,9 @@ const joinBattleRoom = (player: Player): BattleRoom => {
     }
 
     battleRoom.players.push(player)
-
     battleRoom.status = battleRoom.isFull ? BattleStatus.ReadyToStart : BattleStatus.WaitingForPlayers
+
+    player.userinfo.gameRoomId = battleRoom.id
 
     return battleRoom
 }
@@ -58,6 +59,8 @@ const joinBattleRoom = (player: Player): BattleRoom => {
 const leaveBattleRoom = (userInfo: UserInfo): BattleRoom => {
     battleRoom.players = battleRoom.players.filter((player) => player.userinfo.id !== userInfo.id)
     battleRoom.status = battleRoom.isFull ? BattleStatus.ReadyToStart : BattleStatus.WaitingForPlayers
+
+    delete userInfo.gameRoomId
 
     return battleRoom
 }

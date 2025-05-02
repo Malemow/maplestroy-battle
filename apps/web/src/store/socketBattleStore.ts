@@ -43,7 +43,6 @@ export const useSocketBattleStore = create<SocketInfo & SocketBattleRoom>((set) 
 
     const createBattleRoomOptions = (): SocketBattleRoom => {
         const setBattleRoom = (battleRoom: BattleRoom) => {
-            console.log(battleRoom)
             set(() => ({ battleRoom }))
         }
         const initBattleRoom = () => set(() => ({ battleRoom: undefined }))

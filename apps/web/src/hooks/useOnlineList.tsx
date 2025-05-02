@@ -1,6 +1,7 @@
 import { useSocketStore } from "@/store/socketStore.ts"
 import { useEffect } from "react"
 import type { OnlineUser } from "@repo/types/OnlineList.ts"
+import { handleSocketResponse } from "@/utils/socketClient.ts"
 
 export const useOnlineList = () => {
     const socket = useSocketStore((state) => state.socket)
@@ -11,7 +12,7 @@ export const useOnlineList = () => {
             setOnlineList(list)
         }
 
-        socket.on("onlineList", handleList)
+        socket.on(...handleSocketResponse<OnlineUser>("onlineList", handleList))
         socket.emit("getOnlineList")
 
         return () => {

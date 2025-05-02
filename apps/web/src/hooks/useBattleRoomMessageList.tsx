@@ -1,6 +1,8 @@
 import { useSocketBattleStore } from "@/store/socketBattleStore"
 import { useEffect } from "react"
 import type { BattleRoom } from "@repo/types/Battle"
+import { handleSocketResponse } from "@/utils/socketClient"
+import { SocketEvents } from "@repo/constant"
 
 export const useBattleRoomMessageList = () => {
     const setBattleRoom = useSocketBattleStore((state) => state.setBattleRoom)
@@ -11,11 +13,11 @@ export const useBattleRoomMessageList = () => {
             setBattleRoom(room)
         }
 
-        socket.on("battleRoom", handleList)
-        socket.emit("getBattleRoom")
+        socket.on(...handleSocketResponse<BattleRoom>(SocketEvents.BattleRoom, handleList))
+        socket.emit(SocketEvents.GetBattleRoom)
 
         return () => {
-            socket.off("battleRoom", handleList)
+            socket.off(SocketEvents.BattleRoom, handleList)
         }
     }, [])
 }
